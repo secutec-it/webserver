@@ -5,12 +5,7 @@ on:
       - main
 jobs:
   publish:
-    name: Publish to Ansible Galaxy
-    uses: ansible/ansible-publish-action@v1.0.0
-    with:
-      # Galaxy API key to use
-      api_key: ${{ secrets.GALAXY_TOKEN }}
-      # Galaxy API server to use, default being `https://galaxy.ansible.com`
-      api_server: https://galaxy.ansible.com/ # optional, default is https://galaxy.ansible.com/
-      # Specific path to collection, default being `.`
-      src_path: . # optional, default is .
+    name: Ansible Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ansible/ansible-publish-action@v1.0.0
