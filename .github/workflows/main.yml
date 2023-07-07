@@ -1,0 +1,16 @@
+name: Ansible Galaxy Publish
+on:
+  push:
+    branches:
+      - main
+jobs:
+  publish:
+    name: Publish to Ansible Galaxy
+    uses: ansible/ansible-publish-action/.github/workflows/action.yml@main
+    with:
+      # Galaxy API key to use
+      api_key: 
+      # Galaxy API server to use, default being `https://galaxy.ansible.com`
+      api_server: # optional, default is https://galaxy.ansible.com/
+      # Specific path to collection, default being `.`
+      src_path: # optional, default is .
